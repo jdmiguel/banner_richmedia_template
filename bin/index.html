@@ -10,10 +10,10 @@
     <div id="container-banner" data-w="980" data-h="250" data-bg-color="#FFFFFF" data-border="1px solid #C5C5C5" data-cover="true"></div>
 
     <script type="text/javascript" src="../lib/TweenMax.min.js"></script>
-    <script type="text/javascript" src="assets/js/jdm_richmedia.min.js"></script>
+    <script type="text/javascript" src="assets/js/richmedia.min.js"></script>
     <script type="text/javascript">
 
-        var imgPath, videoPath, frameObj, videoObj, clicktagFunction, timelineObj, richmedia;
+        var imgPath, videoPath, frameObj, clicktagFunction, timelineObj, richmedia;
 
         ///////   YOU MUST CUSTOMIZE IMAGES AND VIDEO PATH   ///////
 
@@ -46,7 +46,22 @@
             arrayBtnSrc: ['btn1.png','btn2.png','btn3.png'],
             arrayBtnPosX: ['424','424','424'],
             arrayBtnPosY: ['69','113','154']
-        }
+        };
+
+        /// UN SOLO VIDEO, SIN BOTÓN ///
+
+        /*
+        videoObj = {
+            playerwidth: '360',
+            playerheight: '200',
+            playerPositions: {x:'513',y:'23'},
+            containerId: 'video-wrap',
+            containerAutoAlpha: 0,
+            clicktagFunction: clicktagFunction,
+            arrayExtensions: ['mp4','webm'],
+            arrayIdVideos: ['video1']
+        };
+        */
 
         ///////   YOU MUST CUSTOMIZE TIMELINE OBJECT   ///////
 
@@ -101,7 +116,7 @@
         };
 
         document.addEventListener('DOMContentLoaded', function(event) {
-            richmedia = new JDMRichmedia(document.getElementById('container-banner'),imgPath,videoPath,frameObj,videoObj,timelineObj);
+            richmedia = new Richmedia(document.getElementById('container-banner'),imgPath,videoPath,frameObj,videoObj,timelineObj);
         });
     </script>
 </body>
